@@ -1,0 +1,19 @@
+{
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "freeze": true,
+    "latedef": true,
+    "maxcomplexity": 3,
+    "nocomma": true,
+    "nonbsp": true,
+    "nonew": true,
+    "predef": ["angular", "kendo", "inject"],
+    "undef": true,
+    "evil": true,
+    "browser": true,
+    "browserify": true,
+    "jasmine": true,
+    "jquery": true,
+    "devel": false
+}
