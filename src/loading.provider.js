@@ -1,7 +1,7 @@
 (function () {
     angular.module('zt.angular-loading')
         .provider('Loading', function LoadingSaving() {
-            this.requestTypes = ['GET'];
+            this.requestTypes = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'];
             this.latencyThreshold = 0;
             this.show = function() {
                 this.forceLoading = true;
