@@ -7,7 +7,7 @@
 },{"./loading.directive.js":2,"./loading.provider.js":3}],2:[function(require,module,exports){
 (function() {
     angular.module('zt.angular-loading')
-        .directive('loading', function ($http, $timeout, LoadingSaving) {
+        .directive('loading', function ($http, $timeout, Loading) {
             return {
                 priority: -1000,
                 restrict: 'A',
@@ -17,17 +17,17 @@
                     var latencyTimeoutSet = false;
                     $scope.isLoading = function () {
                         var numRequests = 0;
-                        if (LoadingSaving.forceLoading) {
+                        if (Loading.forceLoading) {
                             return true;
                         }
                         if (!latencyTimeoutSet) {
                             $timeout(function() {
                                 latencyThresholdReached = true;
-                            }, LoadingSaving.latencyThreshold);
+                            }, Loading.latencyThreshold);
                             latencyTimeoutSet = true;
                         }
                         for (var i = $http.pendingRequests.length - 1; i >= 0; i--) {
-                            if (LoadingSaving.requestTypes.indexOf($http.pendingRequests[i].method) < 0) {
+                            if (Loading.requestTypes.indexOf($http.pendingRequests[i].method) < 0) {
                                 continue;
                             }
                             if ($http.pendingRequests[i].hideLoading) {
@@ -58,7 +58,7 @@
 },{}],3:[function(require,module,exports){
 (function () {
     angular.module('zt.angular-loading')
-        .provider('LoadingSaving', function LoadingSaving() {
+        .provider('Loading', function LoadingSaving() {
             this.requestTypes = ['GET'];
             this.latencyThreshold = 0;
             this.show = function() {

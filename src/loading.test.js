@@ -19,7 +19,7 @@ describe('angular-loading', function() {
         $httpBackend.whenDELETE('/test/')
             .respond(200);
         element = $compile("<div loading></div>")($rootScope);
-        Loading.loadingRequestTypes = ['GET', 'PUT'];
+        Loading.requestTypes = ['GET', 'PUT'];
     }));
     describe('isLoading', function() {
         it('should return true when the API has been used to force the loading bar to show', function() {
