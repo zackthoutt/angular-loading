@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var Server = require('karma').Server;
-console.log(plugins);
+
 gulp.task('default', function() {
     return gulp.src('./src/loading.module.js')
                 .pipe(plugins.rename('loading.js'))
