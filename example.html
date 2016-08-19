@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Loading Example</title>
+	<link rel="stylesheet" href="./example.css">
+</head>
+<body>
+	<div
+		ng-app="loading"
+		ng-controller="loadingController as loading"
+	>
+		<div class="Loading"
+			loading
+		>
+			<div class="Bar"></div>
+		</div>
+		<h3>Loading bar visible on request types:</h3>
+		<ul>
+			<li
+				ng-repeat="type in loading.requestTypes"
+			>{{ type }}</li>
+		</ul>
+		<button
+			ng-click="loading.getExample()"
+		>GET</button>
+		<button
+			ng-click="loading.putExample()"
+		>PUT</button>
+		<button
+			ng-click="loading.patchExample()"
+		>PATCH</button>
+		<button
+			ng-click="loading.postExample()"
+		>POST</button>
+		<button
+			ng-click="loading.deleteExample()"
+		>DELETE</button>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script type="text/javascript" src="./../dist/loading.js"></script>
+	<script type="text/javascript" src="./example.js"></script>
+</body>
+</html>
