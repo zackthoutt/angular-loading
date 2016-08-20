@@ -1,5 +1,5 @@
 {
-  "name": "angular-loading",
+  "name": "angular-loading-directive",
   "version": "1.0.0",
   "description": "Loading directive for AngularJS",
   "main": "index.js",
@@ -19,6 +19,7 @@
   "keywords": [
     "angular",
     "angularjs",
+    "directive",
     "loading",
     "progress",
     "saving"
