@@ -1,5 +1,5 @@
 describe('angular-loading', function() {
-    var $rootScope, $httpBackend, $http, element, $timeout, Loading;
+    var $rootScope, $httpBackend, $http, element, $timeout, Loading, $compile;
     beforeEach(angular.mock.module('zt.angular-loading'));
     beforeEach(inject(function($injector, _$compile_) {
         $compile = _$compile_;

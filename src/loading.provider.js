@@ -9,8 +9,15 @@
             this.hide = function() {
                 this.forceLoading = false;
             }.bind(this);
-            this.$get = function() {
-                return this;
+            this.$get = function($timeout) {
+                var self = this;
+                self.showFor = function(milliseconds) {
+                    self.show();
+                    $timeout(function() {
+                        self.hide();
+                    }, milliseconds);
+                }.bind(this);
+                return self;
             };
         });
 })();

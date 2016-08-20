@@ -38,6 +38,15 @@
    	        			console.log('GET request complete');
    	        		});
    	        };
+            self.showExample = function() {
+                Loading.show();
+            };
+            self.hideExample = function() {
+                Loading.hide();
+            };
+            self.showForExample = function(milliseconds) {
+                Loading.showFor(milliseconds);
+            };
    	    });
 
     angular.module('loading');

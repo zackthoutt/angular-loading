@@ -46,7 +46,7 @@
                                 numRequests += 1;
                             }
                         }
-                        return numRequests
+                        return numRequests;
                     };
                     $scope.$watch($scope.isLoading, function(status)
                     {
