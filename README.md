@@ -23,6 +23,7 @@ Add the *__loading__* directive to any element that you would like to act as a l
     <div class="LoadingWheel" loading>
 </div>
 ```
+To see an example go to the [github.io site](https://zackthoutt.github.io/angular-loading-directive/)
 
 ## Configuration
 #### Adjust the latency threshold
