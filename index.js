@@ -1,2 +1,2 @@
-require('./dist/angular-loading.js');
-module.exports = zt.angular-loading;
+require('./dist/loading.js');
+module.exports = 'zt.angular-loading';

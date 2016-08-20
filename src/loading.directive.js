@@ -7,8 +7,8 @@
                 link: function ($scope, elm, attrs)
                 {
                     var self = this;
-                    var latencyThresholdReached = false;
-                    var latencyTimeoutSet = false;
+                    self.latencyThresholdReached = false;
+                    self.latencyTimeoutSet = false;
                     $scope.isLoading = function () {
                         var numRequests;
                         if (Loading.forceLoading) {
@@ -20,17 +20,17 @@
                         return numRequests > 0;
                     };
                     self.resetTimeout = function(numRequests) {
-                        if (numRequests === 0 && latencyThresholdReached === true) {
-                            latencyTimeoutSet = false;
-                            latencyThresholdReached = false;
+                        if (numRequests === 0 && self.latencyThresholdReached === true) {
+                            self.latencyTimeoutSet = false;
+                            self.latencyThresholdReached = false;
                         }
                     };
                     self.setLatencyTimeout = function() {
-                        if (!latencyTimeoutSet) {
+                        if (!self.latencyTimeoutSet) {
                             $timeout(function() {
-                                latencyThresholdReached = true;
+                                self.latencyThresholdReached = true;
                             }, Loading.latencyThreshold);
-                            latencyTimeoutSet = true;
+                            self.latencyTimeoutSet = true;
                         }
                     };
                     self.calcNumRequests = function() {
@@ -42,7 +42,7 @@
                             if ($http.pendingRequests[i].hideLoading) {
                                 continue;
                             }
-                            if (latencyThresholdReached) {
+                            if (self.latencyThresholdReached) {
                                 numRequests += 1;
                             }
                         }
