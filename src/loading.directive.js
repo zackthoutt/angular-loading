@@ -1,6 +1,6 @@
 (function() {
     angular.module('zt.angular-loading')
-        .directive('loading', function ($http, $timeout, Loading) {
+        .directive('loading', ['$http', '$timeout', 'Loading', function ($http, $timeout, Loading) {
             return {
                 priority: -1000,
                 restrict: 'A',
@@ -58,5 +58,5 @@
                     });
                 }
             };
-        });
+        }]);
 })();

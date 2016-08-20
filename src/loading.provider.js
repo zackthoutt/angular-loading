@@ -9,7 +9,7 @@
             this.hide = function() {
                 this.forceLoading = false;
             }.bind(this);
-            this.$get = function($timeout) {
+            this.$get = ['$timeout', function($timeout) {
                 var self = this;
                 self.showFor = function(milliseconds) {
                     self.show();
@@ -18,6 +18,6 @@
                     }, milliseconds);
                 }.bind(this);
                 return self;
-            };
+            }];
         });
 })();
